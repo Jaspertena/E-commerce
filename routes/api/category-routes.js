@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   });
   res.status(200).json(categoryData);
 } catch (err) {
-  res.status(500).json(err);
+  res.status(400).json(err);
 }
   // find all categories
   // be sure to include its associated Products
@@ -65,7 +65,7 @@ router.put('/:id', (req, res) => {
     })
     res.status(200).json(updatedCategory);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(400).json(error);
   }
   // update a category by its `id` value
 });
@@ -77,7 +77,7 @@ router.delete('/:id', (req, res) => {
      where: {id: req.params.id} })
      res.status(200).json(deleteCategory);
   } catch (error) {
-    res.status(500).json(error);
+    res.status(400).json(error);
   }
   // delete a category by its `id` value
 });
